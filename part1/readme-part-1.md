@@ -364,7 +364,9 @@ call the main frame of the app in the main method.
 ```java
 public class Launcher {
     public static void main(String[] args) {
-        new CalculatorApp();
+        SwingUtilities.invokeLater(() -> {
+           new CalculatorApp(); 
+        });
     }
     
 }
