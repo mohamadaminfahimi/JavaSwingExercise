@@ -375,12 +375,12 @@ public class Launcher {
 ---
 
 ### 6. Output of the code:
-<img src="./images/img1.png" alt="..." width="370" height="500"/>
+<img src="./readme-resources/img1.png" alt="..." width="370" height="500"/>
 
-<img src="./images/img2.png" alt="..." width="370" height="500"/>
-<img src="./images/img3.png" alt="..." width="370" height="500"/>
+<img src="./readme-resources/img2.png" alt="..." width="370" height="500"/>
+<img src="./readme-resources/img3.png" alt="..." width="370" height="500"/>
 
-<img src="./images/img4.png" alt="..." width="370" height="500"/>
-<img src="./images/img5.png" alt="..." width="370" height="500"/>
+<img src="./readme-resources/img4.pn" alt="..." width="370" height="500"/>
+<img src="./readme-resources/img5.png" alt="..." width="370" height="500"/>
 
 ---
