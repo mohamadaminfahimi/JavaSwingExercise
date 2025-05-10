@@ -300,6 +300,6 @@ public class Launcher {
 ---
 
 ### 6. Output of the code:
-<img src="./readme-resources/outputGif.gif" alt="..." width="637" />
+<img src="./readme-resources/outputGif.gif" alt="..." width="400" />
 
 
