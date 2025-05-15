@@ -9,6 +9,7 @@ public class ButtonPanel extends JPanel{
 
     private  Button num0 , num1 , num2 , num3 , num4 , num5 , num6 , num7 , num8 , num9 , mul ,add ,
             sub , div  ,digit , clear , equal ,  openParenthesis , closeParenthesis , backspace ;
+    boolean isResultShown = false;
 
     private Button[] buttons ;
 
@@ -33,18 +34,40 @@ public class ButtonPanel extends JPanel{
 
             switch (button.getLabel()) {
                 case "b":
-                    button.addActionListener(_ -> removeLastCharacter());
+                    button.addActionListener(_ -> {
+                        removeLastCharacter();
+                        isResultShown = false;
+                    });
                     break;
                 case "=":
-                    button.addActionListener(_ -> finalEquals());
+                    button.addActionListener(_ -> {
+                        finalEquals();
+                        isResultShown = true;
+                    });
                     break;
                 case "C":
-                    button.addActionListener(_ -> clearTextField());
+                    button.addActionListener(_ -> {
+                        clearTextField();
+                        isResultShown = false;
+                    });
                     break;
                 default:
-                    button.addActionListener(_ -> addCharacter(button.getLabel().charAt(0)));
+                    button.addActionListener(_ -> {
+                        if (isResultShown)
+                            if (!buttonISOperator(button))
+                                clearTextField();
+                        addCharacter(button.getLabel().charAt(0));
+                        isResultShown = false;
+                    });
             }
         }
+    }
+
+    private boolean buttonISOperator(Button button) {
+        return button.getLabel().equalsIgnoreCase("-") ||
+                button.getLabel().equalsIgnoreCase("+") ||
+                button.getLabel().equalsIgnoreCase("/") ||
+                button.getLabel().equalsIgnoreCase("*");
     }
 
     private void styleButton() {
@@ -101,6 +124,6 @@ public class ButtonPanel extends JPanel{
 
 
     private void finalEquals() {
-        //to do
+        DisplayPanel.setText(EvalUtil.eval(DisplayPanel.getText()));
     }
 }

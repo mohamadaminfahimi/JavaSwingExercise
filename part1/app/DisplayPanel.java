@@ -16,10 +16,9 @@ public class DisplayPanel extends JPanel{
         textField.setFont(new Font("Segoe UI", Font.BOLD, 50));
         textField.setForeground(Color.BLACK);
         textField.setBackground(Color.LIGHT_GRAY);
-        textField.setOpaque(true);
         textField.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createEmptyBorder(5, 5, 5, 5),
-                BorderFactory.createLineBorder(Color.BLACK , 2)));
+                BorderFactory.createLineBorder(Color.black , 10)));
 
         this.add(textField);
     }
