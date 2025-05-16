@@ -50,7 +50,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
-    private ShowPanel showPanel;   // Panel for displaying the image
+    private ImagePanel showPanel;   // Panel for displaying the image
     private ControlPanel controlPanel; // Panel for controlling the image size
 
     public MainFrame() {
@@ -61,7 +61,7 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout()); // Use BorderLayout for panels
 
         // Initialize the panels
-        showPanel = new ShowPanel();
+        showPanel = new ImagePanel();
         controlPanel = new ControlPanel(showPanel);
 
         // Add panels to the frame
@@ -160,15 +160,13 @@ package part2.app;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ControlPanel extends JPanel {
     private JTextField widthField, heightField; // Input fields for width and height
     private JButton scaleButton; // Button to trigger the scaling action
-    private ShowPanel showPanel; // Reference to the ShowPanel
+    private ImagePanel showPanel; // Reference to the ShowPanel
 
-    public ControlPanel(ShowPanel showPanel) {
+    public ControlPanel(ImagePanel showPanel) {
         this.showPanel = showPanel; // Set the reference to the ShowPanel
         setLayout(new FlowLayout()); // Use FlowLayout for arranging components
         setBackground(new Color(240, 240, 240)); // Set background color for the panel
